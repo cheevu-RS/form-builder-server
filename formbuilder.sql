@@ -46,7 +46,7 @@ CREATE TABLE `fields` (
 
 LOCK TABLES `fields` WRITE;
 /*!40000 ALTER TABLE `fields` DISABLE KEYS */;
-INSERT INTO `fields` VALUES ('21p4h8x58s7','TextBox','TextArea',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('atebovqcvw','TextBox','TextArea','TextBox','TextArea','CheckBox',NULL,NULL,NULL,NULL,NULL,NULL,NULL),('o10c2w64j7h','TextBox','TextArea','TextBox','TextArea','CheckBox',NULL,NULL,NULL,NULL,NULL,NULL,NULL),('rnahcltsnh','TextBox','TextArea','CheckBox',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `fields` VALUES ('2wlng1gh4hy','TextBox','TextArea','TextBox','TextBox','TextArea','CheckBox',NULL,NULL,NULL,NULL,NULL,NULL),('6x8prh6hlc','TextBox','TextArea','TextBox',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('atebovqcvw','TextBox','TextArea','TextBox','TextArea','CheckBox',NULL,NULL,NULL,NULL,NULL,NULL,NULL),('o10c2w64j7h','TextBox','TextArea','TextBox','TextArea','CheckBox',NULL,NULL,NULL,NULL,NULL,NULL,NULL),('rnahcltsnh','TextBox','TextArea','CheckBox',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `fields` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,7 +81,7 @@ CREATE TABLE `forms` (
 
 LOCK TABLES `forms` WRITE;
 /*!40000 ALTER TABLE `forms` DISABLE KEYS */;
-INSERT INTO `forms` VALUES ('21p4h8x58s7','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('atebovqcvw','Form tester','test all fields','text ele','text area ele','[\"check ele\", [\"check1\", \"check2\"]]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),('o10c2w64j7h','tester','test all form elements','Box','Area','[\"Check\", [\"op1\", \"op2\"]]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),('rnahcltsnh','Gender Bender','hOw do You IdenTiFy','[\"Gender\", [\"Male\", \"Female\", \"Prefer not to say\", \"Unsure\"]]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `forms` VALUES ('2wlng1gh4hy','Biodata','Let us know you.','Name','City','Describe yourself','[\"Languages you know\", [\"English\", \"Hindi\", \"Tamil\"]]',NULL,NULL,NULL,NULL,NULL,NULL),('6x8prh6hlc','Test CORS','testing Cors bn flask and npm','test',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('atebovqcvw','Form tester','test all fields','text ele','text area ele','[\"check ele\", [\"check1\", \"check2\"]]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),('o10c2w64j7h','tester','test all form elements','Box','Area','[\"Check\", [\"op1\", \"op2\"]]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),('rnahcltsnh','Gender Bender','hOw do You IdenTiFy','[\"Gender\", [\"Male\", \"Female\", \"Prefer not to say\", \"Unsure\"]]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `forms` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,7 +106,7 @@ CREATE TABLE `responses` (
   `field9` varchar(100) DEFAULT NULL,
   `field10` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`sno`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -115,7 +115,7 @@ CREATE TABLE `responses` (
 
 LOCK TABLES `responses` WRITE;
 /*!40000 ALTER TABLE `responses` DISABLE KEYS */;
-INSERT INTO `responses` VALUES (1,'o10c2w64j7h','dasdas','dasdasd','[True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'o10c2w64j7h','dasdas','dasdasd','[True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(3,'o10c2w64j7h','dasdas','','[True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,'o10c2w64j7h','','snkd','[True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(5,'o10c2w64j7h','','snkd','[False, False]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(6,'atebovqcvw','input','larger meaningful input','[False, True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(7,'rnahcltsnh','[True, False, True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(8,'rnahcltsnh','[False, True, False, True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `responses` VALUES (1,'o10c2w64j7h','dasdas','dasdasd','[True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'o10c2w64j7h','dasdas','dasdasd','[True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(3,'o10c2w64j7h','dasdas','','[True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,'o10c2w64j7h','','snkd','[True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(5,'o10c2w64j7h','','snkd','[False, False]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(6,'atebovqcvw','input','larger meaningful input','[False, True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(7,'rnahcltsnh','[True, False, True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(8,'rnahcltsnh','[False, True, False, True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(9,'2wlng1gh4hy','Ram','Madurai','I like dank memes!','[True, False, True]',NULL,NULL,NULL,NULL,NULL,NULL),(10,'o10c2w64j7h','whooo','ald.dsnfsdnf','[True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(11,'o10c2w64j7h','','','[True, True]',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(12,'6x8prh6hlc','cbsmbcm,zs',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(13,'6x8prh6hlc','lolll',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `responses` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -128,4 +128,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-18 14:43:02
+-- Dump completed on 2019-05-20  9:03:09

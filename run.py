@@ -1,11 +1,12 @@
 from flask import Flask, request
+from flask_cors import CORS
 import dbconfig
 import json
 from dbconfig import dbconfig
 import mysql.connector
 
 app = Flask(__name__)
-
+cors = CORS(app)
 def sql():
     try:
         cnx = mysql.connector.connect(user=dbconfig.USER, database=dbconfig.DB, 
