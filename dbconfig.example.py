@@ -1,5 +1,5 @@
 class dbconfig(object):
-    HOST = 'localhost'
+    HOST = 'aaveg.net'
     USER = 'user'
     PASSWORD = 'pwd'
     DB = 'formbuilder'
