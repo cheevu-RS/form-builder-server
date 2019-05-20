@@ -1,12 +1,13 @@
 from flask import Flask, request
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 import dbconfig
 import json
 from dbconfig import dbconfig
 import mysql.connector
-
 app = Flask(__name__)
-cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app)
+
 def sql():
     try:
         cnx = mysql.connector.connect(user=dbconfig.USER, database=dbconfig.DB, 
@@ -20,12 +21,16 @@ def sql():
             print(err)
     return cnx
 
+@app.route('/test')
+def test():
+    return "hello world"
+
 @app.route('/create_form', methods=['GET','POST'])
 def create_form():
     cnx = sql()
     cursor = cnx.cursor()
     print(request.data)
-    data = json.loads(request.data)
+    data = json.loads(request.data.decode('utf-8'))
     print (data)
     stmt = "INSERT INTO forms ( formId, name, description"
     for i in range(1, len(data)-2):
@@ -58,7 +63,7 @@ def create_form():
     stmt1+="'"+data[len(data)-1][1]+"');"  
     print (stmt1)
 
-
+	
     try:
         cursor.execute(stmt)
         cursor.execute(stmt1)
@@ -94,7 +99,7 @@ def getForms():
 def getFields():
     cnx = sql()
     cursor = cnx.cursor()
-    data = json.loads(request.data)
+    data = json.loads(request.data.decode('utf-8'))
     id = data['data']
     print (id)
     stmt = "select * from forms where formId = '{}'".format(id)
@@ -128,7 +133,7 @@ def submitResponse():
     cnx = sql()
     cursor = cnx.cursor()
     # print (request.data)
-    data = json.loads(request.data)
+    data = json.loads(request.data.decode('utf-8'))
     # print (data['for  mID'])
     ans = []
     for i in range(len(data['fields'])):
@@ -170,8 +175,8 @@ def submitResponse():
 def getResponses():
     cnx = sql()
     cursor = cnx.cursor()
-    # print (request.data)
-    data = json.loads(request.data)
+    print (request.data.decode('utf-8'))
+    data = json.loads(request.data.decode('utf-8'))
     stmt = "select * from forms where formId = '{}';".format(data['formId'])
     print (stmt)
     stmt1 = "select * from responses where formId = '{}';".format(data['formId'])
@@ -207,6 +212,6 @@ def getResponses():
     # return "dfdf"
 
 app.config.from_object('config.DevelopmentConfig')
-app.run()
+app.run(host="0.0.0.0",port=6801)
 
 # CREATE TABLE forms ( formId int NOT NULL PRIMARY KEY, field1 varchar(100), field2 varchar(100), field3 varchar(100), field4 varchar(100),field5 varchar(100),field6 varchar(100),field7 varchar(100),field8 varchar(100),field9 varchar(100),field10 varchar(100));
